@@ -1,6 +1,79 @@
-$primary-color: #444;
+@import "config";
 
+//box sizing icon for everything
+* {
+  box-sizing: border-box;
+}
 body {
+  @include background;
   background: $primary-color;
   color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+//Headings styles
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+
+  //nesting headings (ampersand)
+  &.lg-heading {
+    font-size: 6rem; //html font is 16px by default
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+//Styling links
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+//header styles
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+//styling for main
+main {
+  padding: 4rem;
+  height: 100%;
+
+  //nesting for icons styling
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  &#home {
+    //to hide scroll bars
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
