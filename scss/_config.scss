@@ -51,7 +51,7 @@ $background-opacity: 0.7;
   }
 }
 //Extra large
-@mixin mediaXL {
+@mixin mediaXl {
   @media screen and (min-width: 1171px) {
     @content;
   }
